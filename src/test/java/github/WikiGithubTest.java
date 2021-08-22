@@ -15,13 +15,14 @@ import static com.codeborne.selenide.Selenide.$;
 public class WikiGithubTest {
    @BeforeAll
    static void setup() {
+       Configuration.baseUrl = "https://github.com/";
        Configuration.startMaximized = true;
    }
     @Test
     void WikiGithubTestHome(){
 
         //Откройте страницу Selenide в Github
-        Selenide.open("https://github.com/selenide/selenide");
+        Selenide.open("selenide/selenide");
         //Перейдите в раздел Wiki проекта
         $("#wiki-tab").click();
         //click on show more pages
